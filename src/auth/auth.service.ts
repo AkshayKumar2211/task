@@ -13,7 +13,7 @@ export class AuthService {
 private readonly jwtService:JwtService){}
 
           async register(dto: userDto) {
-                const { email, password, role } = dto;
+                const { email, password, role ,name } = dto;
 
 
                 if (!email || !password || !role) {
@@ -31,6 +31,7 @@ private readonly jwtService:JwtService){}
 
 
                 const newUser = await this.userModel.create({
+                    name,
                     email,
                     password: hashedPassword,
                     role,
