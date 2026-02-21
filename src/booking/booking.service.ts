@@ -68,7 +68,7 @@ export class BookingService {
       .sort({ createdAt: -1 });
   }
 
-  //  Admin: Get All Bookings
+ 
   async getAllBookings() {
     return this.bookingModel
       .find()
